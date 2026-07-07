@@ -19,6 +19,23 @@ posterImg.addEventListener('error', () => {
   posterImg.replaceWith(fallback);
 });
 
+// --- Countdown ---
+
+const EVENT_DATE = new Date('2026-07-11T18:30:00Z'); // 6:30 PM GMT (Liberia time)
+
+function updateCountdown() {
+  const remaining = Math.max(0, EVENT_DATE - new Date());
+  const pad = (n) => String(n).padStart(2, '0');
+
+  document.getElementById('cd-days').textContent = pad(Math.floor(remaining / 86400000));
+  document.getElementById('cd-hours').textContent = pad(Math.floor(remaining / 3600000) % 24);
+  document.getElementById('cd-minutes').textContent = pad(Math.floor(remaining / 60000) % 60);
+  document.getElementById('cd-seconds').textContent = pad(Math.floor(remaining / 1000) % 60);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 // --- Multi-step wizard ---
 
 const steps = Array.from(document.querySelectorAll('.step'));

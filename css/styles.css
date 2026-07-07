@@ -88,6 +88,29 @@ body {
   max-width: 640px;
 }
 
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.step-hero .hero-inner {
+  animation: hero-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-hero .hero-inner {
+    animation: none;
+  }
+}
+
 .org-logo-row {
   display: flex;
   justify-content: center;
@@ -122,6 +145,7 @@ body {
 
 .logo-line-two {
   text-align: right;
+  margin-top: -0.35em;
 }
 
 .logo-woman,
@@ -150,6 +174,36 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 0.9rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-value {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--maroon);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  margin-top: 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .powered-by {
