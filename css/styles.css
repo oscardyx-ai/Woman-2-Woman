@@ -251,7 +251,7 @@ body {
 
 .success-card {
   min-height: 100vh;
-  max-width: 640px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -259,6 +259,11 @@ body {
   align-items: center;
   padding: 40px 20px;
   text-align: center;
+  background: linear-gradient(155deg, var(--bg-tan) 0%, var(--bg-tan-deep) 100%);
+}
+
+.success-card > * {
+  max-width: 640px;
 }
 
 .success-card[hidden] {
@@ -427,6 +432,13 @@ textarea {
 
 .success-card h2 {
   color: var(--pink-dark);
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin: 0 0 18px;
+}
+
+.success-card p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
 }
 
 @media (max-width: 480px) {
