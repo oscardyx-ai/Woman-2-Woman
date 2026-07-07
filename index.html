@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woman 2 Woman Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="wizard" id="wizard">
+  <div class="step-indicator" id="step-indicator"></div>
+
+  <form id="registration-form" novalidate>
+
+    <section class="step step-hero active" data-step>
+      <div class="hero-inner">
+        <div class="org-logo-row">
+          <div class="org-logo-slot">
+            <img class="org-logo-img" src="assets/logos/empowerment-squared.png" alt="Empowerment Squared">
+          </div>
+          <div class="org-logo-slot">
+            <img class="org-logo-img" src="assets/logos/liberian-learning-center.png" alt="Liberian Learning Center">
+          </div>
+        </div>
+        <div class="logo-lockup">
+          <div class="wordmark">
+            <div class="logo-line"><span class="logo-woman">WOMAN</span></div>
+            <div class="logo-line logo-line-two"><span class="logo-two">2 WOMAN</span></div>
+          </div>
+          <p class="tagline">Pushing Liberian Women Towards Success.</p>
+        </div>
+        <p class="powered-by">Powered By <span class="brand-holistiq">Holistiq</span></p>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-next" data-next>Next</button>
+      </div>
+    </section>
+
+    <section class="step step-poster" data-step>
+      <img class="poster-img" id="poster-img" src="assets/img/poster.png" alt="Woman 2 Woman event poster">
+      <div class="step-nav">
+        <button type="button" class="btn-back" data-back>Back</button>
+        <button type="button" class="btn-next" data-next>Next</button>
+      </div>
+    </section>
+
+    <section class="step" data-step>
+      <div class="step-card intro-card">
+        <h1>Woman 2 Woman Registration</h1>
+        <p>
+          Welcome to Woman 2 Woman: Pushing Liberian Women Towards Success. This event brings together
+          accomplished Liberian women leaders and professionals to share their stories, experiences, and
+          lessons learned. Through meaningful discussion and mentorship, we hope to inspire confidence,
+          broaden aspirations, and empower the next generation of Liberian women and girls. Please complete
+          this registration form to reserve your spot.
+        </p>
+        <p class="event-details">
+          The event takes place <strong>July 11, 6:30&nbsp;PM</strong>.<br>
+          <span class="warning">PLEASE BE THERE BY 6:00&nbsp;PM &mdash; ENTRANCE WILL BE CLOSED AFTER THIS TIME.</span>
+        </p>
+        <p class="required-note">* Indicates required question</p>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-back" data-back>Back</button>
+        <button type="button" class="btn-next" data-next>Next</button>
+      </div>
+    </section>
+
+    <section class="step" data-step>
+      <div class="step-card">
+        <h2 class="form-title">Personal Information</h2>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name <span class="req">*</span></label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age">Age <span class="req">*</span></label>
+          <input type="number" id="age" name="age" min="1" max="120" required>
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">WhatsApp Number <span class="req">*</span></label>
+          <input
+            type="tel"
+            id="whatsapp"
+            name="whatsapp"
+            placeholder="e.g. 0770 123 456"
+            inputmode="tel"
+            pattern="\+?[0-9\s\-]{7,20}"
+            title="Enter a valid phone number (7-20 digits, may include a leading + or spaces/dashes)"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-back" data-back>Back</button>
+        <button type="button" class="btn-next" data-next>Next</button>
+      </div>
+    </section>
+
+    <section class="step" data-step>
+      <div class="step-card">
+        <div class="field">
+          <label for="futureCareer">What do you hope will be your future career? <span class="req">*</span></label>
+          <input type="text" id="futureCareer" name="futureCareer" required>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-back" data-back>Back</button>
+        <button type="button" class="btn-next" data-next>Next</button>
+      </div>
+    </section>
+
+    <section class="step" data-step>
+      <div class="step-card">
+        <div class="field">
+          <label for="whyCareer">Following up on the previous question, why? <span class="req">*</span></label>
+          <textarea id="whyCareer" name="whyCareer" rows="5" required></textarea>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-back" data-back>Back</button>
+        <button type="button" class="btn-next" data-next>Next</button>
+      </div>
+    </section>
+
+    <section class="step" data-step>
+      <div class="step-card">
+        <div class="field">
+          <label for="dreamJob">
+            Is this your dream job? If yes write "N/A". If not, what is your dream job and what makes you
+            think you cannot do it? <span class="req">*</span>
+          </label>
+          <textarea id="dreamJob" name="dreamJob" rows="5" required></textarea>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-back" data-back>Back</button>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </section>
+
+  </form>
+
+  <section class="step-card success-card" id="success-card" hidden>
+    <h2>Thank you for registering!</h2>
+    <p>We've received your response. See you on July 11 at 6:30&nbsp;PM &mdash; please arrive by 6:00&nbsp;PM.</p>
+  </section>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

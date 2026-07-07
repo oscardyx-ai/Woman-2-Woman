@@ -1,0 +1,391 @@
+:root {
+  --bg-tan: #e7d9bf;
+  --bg-tan-deep: #d3bf9a;
+  --cream: #fbf6ec;
+  --maroon: #5b2a1d;
+  --maroon-deep: #401d13;
+  --pink: #e31c79;
+  --pink-dark: #b8155f;
+  --green: #7cb342;
+  --text-dark: #3a2a1e;
+  --text-muted: #7a6c57;
+  --border: #e0d3b8;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(64, 29, 19, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-tan-deep);
+  color: var(--text-dark);
+}
+
+.wizard {
+  position: relative;
+}
+
+.step-indicator {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 20;
+}
+
+.step-indicator[hidden] {
+  display: none;
+}
+
+.step-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(64, 29, 19, 0.2);
+}
+
+.step-indicator .dot.current {
+  background: var(--pink);
+  width: 20px;
+  border-radius: 4px;
+}
+
+.step {
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 32px;
+  text-align: center;
+}
+
+.step.active {
+  display: flex;
+}
+
+.step-hero {
+  background: linear-gradient(155deg, var(--bg-tan) 0%, var(--bg-tan-deep) 100%);
+}
+
+.step > .hero-inner,
+.step > .step-card {
+  margin: auto 0;
+  width: 100%;
+}
+
+.step > .poster-img,
+.step > .poster-fallback {
+  margin: auto 0;
+}
+
+.hero-inner {
+  max-width: 640px;
+}
+
+.org-logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.org-logo-img {
+  height: 76px;
+  width: auto;
+  max-width: 280px;
+  object-fit: contain;
+}
+
+.org-logo-fallback {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: var(--maroon);
+  text-transform: uppercase;
+}
+
+.wordmark {
+  display: inline-block;
+}
+
+.logo-line {
+  line-height: 1.05;
+}
+
+.logo-line-two {
+  text-align: right;
+}
+
+.logo-woman,
+.logo-two {
+  font-family: 'Archivo Black', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.logo-woman {
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  color: var(--maroon);
+}
+
+.logo-two {
+  font-size: clamp(1rem, 3.2vw, 1.6rem);
+}
+
+.logo-two {
+  color: var(--pink);
+}
+
+.tagline {
+  margin-top: 14px;
+  color: var(--maroon);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.powered-by {
+  margin-top: 32px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.brand-holistiq {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.poster-img,
+.poster-fallback {
+  max-width: min(460px, 88vw);
+  max-height: 68vh;
+  width: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(64, 29, 19, 0.35);
+}
+
+.poster-fallback {
+  width: min(460px, 88vw);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: var(--cream);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.step-card {
+  max-width: 640px;
+  background: var(--cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 28px;
+  text-align: left;
+}
+
+.success-card {
+  min-height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.success-card[hidden] {
+  display: none;
+}
+
+.intro-card h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  color: var(--maroon);
+}
+
+.intro-card p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+.event-details {
+  padding: 14px 16px;
+  background: rgba(227, 28, 121, 0.1);
+  border-left: 4px solid var(--pink);
+  border-radius: 8px;
+}
+
+.warning {
+  color: var(--pink-dark);
+  font-weight: 700;
+}
+
+.required-note {
+  color: var(--pink-dark);
+  font-size: 0.85rem;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.form-title {
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid var(--pink);
+  color: var(--maroon);
+  font-size: 1.3rem;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.field-row .field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.step-card .field:last-child,
+.step-card .field-row:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.req {
+  color: var(--pink-dark);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(227, 28, 121, 0.16);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.step-nav {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn-next,
+.submit-btn,
+.btn-back {
+  appearance: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+}
+
+.btn-next,
+.submit-btn {
+  border: none;
+  background: var(--pink);
+  color: #fff;
+  margin-left: auto;
+}
+
+.btn-next:hover,
+.submit-btn:hover {
+  background: var(--pink-dark);
+}
+
+.btn-back {
+  border: 1.5px solid var(--maroon);
+  background: transparent;
+  color: var(--maroon);
+}
+
+.btn-back:hover {
+  background: rgba(91, 42, 29, 0.08);
+}
+
+.btn-next:active,
+.submit-btn:active,
+.btn-back:active {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-status {
+  width: 100%;
+  max-width: 640px;
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  color: var(--pink-dark);
+  min-height: 1.2em;
+  text-align: left;
+}
+
+.success-card h2 {
+  color: var(--pink-dark);
+}
+
+@media (max-width: 480px) {
+  .field-row {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .step-card {
+    padding: 24px 20px;
+  }
+
+  .org-logo-img {
+    height: 52px;
+  }
+}
