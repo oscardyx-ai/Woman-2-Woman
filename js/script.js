@@ -1,7 +1,7 @@
 // Replace with your deployed Google Apps Script Web App URL (see apps-script/README.md)
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzUEh5xQQxisXURtqlfINQesN5vjFzv-OrA5zinhN4Umm6WnHN-q24Eodak0d7ryOsE/exec';
 
-document.querySelectorAll('.org-logo-img').forEach((img) => {
+document.querySelectorAll('.org-logo-img, .partner-logo-img').forEach((img) => {
   img.addEventListener('error', () => {
     const label = document.createElement('span');
     label.className = 'org-logo-fallback';

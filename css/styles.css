@@ -14,6 +14,15 @@
   --shadow: 0 10px 30px rgba(64, 29, 19, 0.14);
 }
 
+@font-face {
+  font-family: 'Amoresa';
+  src: url('../assets/fonts/amoresa-regular.woff2') format('woff2'),
+       url('../assets/fonts/amoresa-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -111,13 +120,20 @@ body {
   }
 }
 
-.org-logo-row {
-  display: flex;
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 220px));
+  column-gap: 40px;
+  row-gap: 20px;
   justify-content: center;
   align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
   margin-bottom: 28px;
+}
+
+.logo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .org-logo-img {
@@ -135,32 +151,44 @@ body {
   text-transform: uppercase;
 }
 
+.partner-logo-img {
+  height: 46px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.partner-logo-img-large {
+  height: 108px;
+  max-width: 320px;
+}
+
 .wordmark {
   display: inline-block;
 }
 
 .logo-line {
-  line-height: 1.05;
+  line-height: 1.15;
 }
 
 .logo-line-two {
   text-align: right;
-  margin-top: -0.35em;
+  margin-top: -0.85em;
 }
 
 .logo-woman,
 .logo-two {
-  font-family: 'Archivo Black', sans-serif;
-  letter-spacing: 0.02em;
+  font-family: 'Amoresa', cursive;
+  font-weight: 400;
 }
 
 .logo-woman {
-  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-size: clamp(3.4rem, 11vw, 5.6rem);
   color: var(--maroon);
 }
 
 .logo-two {
-  font-size: clamp(1rem, 3.2vw, 1.6rem);
+  font-size: clamp(2rem, 6vw, 3rem);
 }
 
 .logo-two {
@@ -453,5 +481,13 @@ textarea {
 
   .org-logo-img {
     height: 52px;
+  }
+
+  .partner-logo-img {
+    height: 34px;
+  }
+
+  .partner-logo-img-large {
+    height: 78px;
   }
 }
