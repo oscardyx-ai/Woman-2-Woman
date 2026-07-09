@@ -8,12 +8,11 @@ function doPost(e) {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
       'Timestamp',
-      'First Name',
-      'Last Name',
+      'Name',
       'Age',
       'WhatsApp Number',
       'Email',
-      'Future Career',
+      'Future career',
       'Why',
       'Dream Job',
     ]);
@@ -21,8 +20,7 @@ function doPost(e) {
 
   sheet.appendRow([
     new Date(),
-    data.firstName || '',
-    data.lastName || '',
+    data.name || '',
     data.age || '',
     data.whatsapp || '',
     data.email || '',

@@ -104,6 +104,8 @@ form.addEventListener('submit', async (event) => {
   statusEl.textContent = 'Submitting...';
 
   const data = Object.fromEntries(new FormData(form).entries());
+  const { firstName, lastName, ...rest } = data;
+  const payload = { name: `${firstName} ${lastName}`.trim(), ...rest };
 
   try {
     if (SCRIPT_URL.startsWith('PASTE_')) {
@@ -114,7 +116,7 @@ form.addEventListener('submit', async (event) => {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     });
 
     form.hidden = true;
