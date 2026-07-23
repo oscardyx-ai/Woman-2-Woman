@@ -21,7 +21,7 @@ posterImg.addEventListener('error', () => {
 
 // --- Countdown ---
 
-const EVENT_DATE = new Date('2026-07-11T18:30:00Z'); // 6:30 PM GMT (Liberia time)
+const EVENT_DATE = new Date('2026-08-01T13:00:00Z'); // 1:00 PM GMT (Liberia time)
 
 function updateCountdown() {
   const remaining = Math.max(0, EVENT_DATE - new Date());
